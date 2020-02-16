@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            
+     function validate()
+                {
+                    var a = document.getElementById("fname").value;
+                    var b = document.getElementById("lname").value;
+                    var c = document.getElementById("emailid").value;
+                    var d = document.getElementById("mb").value;
+        
+                    var e = /^\d{10}$/;;
+                    var em=/^[A-Za-z][A-Za-z0-9]@[A-Za-z].[A-Za-z]/
+
+                    if (a=="" || b=="" || c=="" || d=="")
+                    {
+                        alert("Values should be filled .");
+                        return false;
+                    }
+                    else
+                    {
+                         return true;
+                    } 
+                    if(c.match(em))
+                        true;
+                    else{
+                            document.getElementById("emailid").innerHTML="Please enter valid email id";
+                            return false;
+                        } 
+                     if(d.match(e))
+                        true;
+                    else{
+                            document.getElementById("emailid").innerHTML="Please enter valid mobile number";
+                            return false;
+                        }  
+                }
+        </script>
+    </head>
+    <body>
+       <form method="POST" action="MyServelet" onsubmit="return validate()" >
+            
+            <h2>Registration Form</h2>
+            <table>
+                    <tr>
+                        <td>
+                             <font color="navy">ENTER YOUR FIRST NAME</font>
+                        </td>
+                        <td>
+                            <input type="text" name="first" id="fname" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <font color="navy">ENTER YOUR LAST NAME</font>
+                        </td>
+                        <td>
+                            <input type="text" name="last" id="lname" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <font color="navy">ENTER YOUR EMAIL ID</font>
+                        </td>
+                        <td>
+                            <input type="email" name="email" id="emailid" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <font color="navy">ENTER YOUR MOBILE NUMBER</font>
+                        </td>
+                        <td>
+                            <input type="text" name="mbno" id="mb" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button onclick="submit">SUBMIT</button>
+                        </td>
+                        
+                    </tr>
+                    
+                 </table>
+            
+            
+        </form>
+    </body>
+</html>
+
