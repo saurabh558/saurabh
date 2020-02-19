@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <script>
+            function validate()
+            {
+                var name1=document.getElementById("name1").value;
+                var name2=document.getElementById("name2").value;
+                var name3=document.getElementById("name3").value;
+                var em=/^[A-Za-z][A-Za-z0-9]@[A-Za-z].[A-Za-z]/
+                var ema=document.getElementById("email").value;
+                var mobile=/^[789]\d{9}$/;
+                var con=document.getElementById("mb").value;               
+                var add=document.getElementById("add").value;                
+                if(name1=="")
+                {
+                    document.getElementById("w1").style.visibility = "visible";
+                    return false;
+                }
+                else{
+                    document.getElementById("w1").style.visibility = "hidden";
+                    
+                }
+                if(name2=="")
+                {
+                    document.getElementById("w2").style.visibility = "visible";
+                    return false;
+                }
+                else{
+                    document.getElementById("w2").style.visibility = "hidden";
+                    
+                }
+                if(name3=="")
+                {
+                    document.getElementById("w3").style.visibility = "visible";
+                    return false;
+                }
+                else{
+                    document.getElementById("w3").style.visibility = "hidden";
+                    
+                }
+                if(em.test(ema)==false)
+                {
+                    document.getElementById("w4").style.visibility = "visible";
+                    return false;
+                }
+                else{
+                    document.getElementById("w4").style.visibility = "hidden";
+                    
+                }
+                if(mobile.test(con)==false)
+                {
+                    document.getElementById("w5").style.visibility = "visible";
+                    return false;
+                }
+                else{
+                    document.getElementById("w5").style.visibility = "hidden";
+                
+                }
+                if(add=="")
+                {
+                    document.getElementById("w6").style.visibility = "visible";
+                    return false;
+                }
+                else{
+                    document.getElementById("w6").style.visibility = "hidden";
+                    
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>ENTER YOUR FIRST NAME</td>
+                <td><input type="text" id="name1"/></td>
+                <td><h6 style="color: red; visibility: hidden" id="w1">*please enter first name</h6></td>
+            </tr>
+            <tr>
+                <td>ENTER YOUR MIDDLE NAME</td>
+                <td><input type="text" id="name2"/></td>
+                <td><h6 style="color: red; visibility: hidden" id="w2">*please enter  middle name</h6></td>
+            </tr>
+            <tr>
+                <td>ENTER YOUR LAST NAME</td>
+                <td><input type="text" id="name3"/></td>
+                <td><h6 style="color: red; visibility: hidden" id="w3">*please enter last name</h6></td>
+            </tr>
+            <tr>
+                <td>ENTER YOUR EMAIL ADDRESS</td>
+                <td><input type="email" id="email"/></td>
+                <td><h6 style="color: red; visibility: hidden" id="w4">*please enter email</h6></td>
+            </tr>
+            <tr>
+                <td>ENTER YOUR MOBILE NUMBER</td>
+                <td><input type="text" id="mb" maxlength="10"/></td>
+                <td><h6 style="color: red; visibility: hidden" id="w5">*please enter mobile number</h6></td>
+            </tr>
+            <tr>
+                <td>ENTER YOUR ADDRESS</td>
+                <td><input type="text" id="add"/></td>
+                <td><h6 style="color: red; visibility: hidden" id="w6">*please enter address</h6></td>
+            </tr>
+            <tr>
+                <td><button onclick="return validate()">Submit</button></td>
+            </tr>
+        </table>
+
+    </body>
+</html>
